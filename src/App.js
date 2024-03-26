@@ -15,6 +15,7 @@ import { FooterRu } from "./footer/footerTranslet.js";
 import { FooterEn } from "./footer/footerTranslet.js";
 
 function App() {
+  <button>fger</button>;
   const [headlenguage, setHeadLenguage] = useState(HeaderRu);
   const [bodylenguage, setBodyLenguage] = useState(BodyRu);
   const [footerlenguage, setFooterLenguage] = useState(FooterRu);
