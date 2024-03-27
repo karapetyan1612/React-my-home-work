@@ -3,14 +3,6 @@ import BodyContext from "./BodyLenguageContext";
 import CreatButton from "../CreatButton";
 
 function HeaderCont(params) {
-  const [isShow, Show] = useState(false);
-  const ContBut = useCallback(() => {
-    if (isShow === false) {
-      Show(true);
-    } else {
-      Show(false);
-    }
-  }, [isShow]);
   const t = useContext(BodyContext);
   return (
     <div className="headerCont">
@@ -28,15 +20,9 @@ function HeaderCont(params) {
           <span>{t.video}</span>
         </div>
       </div>
-      {isShow ? (
-        <CreatButton className="contbutt" onClick={ContBut}>
-          {params.date.contbut1}
-        </CreatButton>
-      ) : (
-        <CreatButton className="contbutt1" onClick={ContBut}>
-          {params.date.contbut}
-        </CreatButton>
-      )}
+      <CreatButton className={params.date.class}>
+        {params.date.contbut}
+      </CreatButton>
     </div>
   );
 }
