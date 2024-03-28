@@ -18,16 +18,19 @@ function App() {
   const [headlenguage, setHeadLenguage] = useState(HeaderRu);
   const [bodylenguage, setBodyLenguage] = useState(BodyRu);
   const [footerlenguage, setFooterLenguage] = useState(FooterRu);
+  const [buttonColor, setButtonColor] = useState(true);
 
   const LenguageRU = function () {
     setHeadLenguage(HeaderRu);
     setBodyLenguage(BodyRu);
     setFooterLenguage(FooterRu);
+    setButtonColor(!buttonColor);
   };
   const LenguageEN = function () {
     setHeadLenguage(HeaderEn);
     setBodyLenguage(BodyEn);
     setFooterLenguage(FooterEn);
+    setButtonColor(!buttonColor);
   };
 
   return (
@@ -37,6 +40,7 @@ function App() {
           value: headlenguage,
           LenguageRu: LenguageRU,
           LenguageEn: LenguageEN,
+          Color: buttonColor,
         }}
       >
         <Header></Header>

@@ -19,7 +19,7 @@ function HeaderAccount() {
     <>
       <div className="header-account">
         <div className="header-account-logo">
-          <span>{t.value.logoname}</span>
+          <span>{t.value.name}</span>
         </div>
         <div className="header-account-name">
           <span className="name1">{t.value.name} </span>
@@ -35,13 +35,20 @@ function HeaderAccount() {
 
 function Translate() {
   const t = useContext(HeaderContext);
+  console.log(t.Color);
 
   return (
     <div className="translate">
-      <button className="ru" onClick={t.LenguageRu}>
+      <button
+        className={t.Color ? "hedaerblue" : "hedaerwhite"}
+        onClick={t.LenguageRu}
+      >
         Ru
       </button>
-      <button className="en" onClick={t.LenguageEn}>
+      <button
+        className={t.Color ? "hedaerwhite" : "hedaerblue"}
+        onClick={t.LenguageEn}
+      >
         En
       </button>
     </div>

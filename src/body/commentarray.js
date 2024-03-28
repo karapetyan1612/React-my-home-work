@@ -62,7 +62,6 @@ export const CommentArray = [
     staj: "Стаж 15 лет",
     date: "03 Марта 2021 ",
     hour: "16:00",
-    contbut: "Запланировано",
     status: 3,
     contbut: "Отменено",
     class: "contbutt2",
