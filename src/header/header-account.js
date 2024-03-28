@@ -19,7 +19,7 @@ function HeaderAccount() {
     <>
       <div className="header-account">
         <div className="header-account-logo">
-          <span>{t.value.name}</span>
+          <span>{t.value.name[0]}</span>
         </div>
         <div className="header-account-name">
           <span className="name1">{t.value.name} </span>
@@ -35,7 +35,6 @@ function HeaderAccount() {
 
 function Translate() {
   const t = useContext(HeaderContext);
-  console.log(t.Color);
 
   return (
     <div className="translate">
