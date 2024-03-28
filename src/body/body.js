@@ -4,6 +4,7 @@ import Countseling from "./counseling";
 import BodyContext from "./BodyLenguageContext";
 import { Comment } from "./comment";
 import CreatButton from "../CreatButton";
+import "./body.css";
 
 function Body(params) {
   const t = useContext(BodyContext);

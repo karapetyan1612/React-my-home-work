@@ -4,12 +4,23 @@
   display: flex;
   flex-direction: column;
 }
+.bodyCounseling {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
 .counseling {
-  margin-top: 70px;
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
-  margin-left: 40px;
+  justify-content: space-between;
+  width: 1100px;
+}
+.heightcouns {
+  margin-top: 50px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 .counseling1 h1 {
   width: 490px;
@@ -64,7 +75,7 @@
 .counseimg {
   height: 500px;
   width: 350px;
-  background-image: url("./img/image.png");
+  background-image: url("../img/image.png");
   background-size: 100%;
   background-repeat: no-repeat;
   margin-left: -90px;
@@ -78,14 +89,12 @@
   margin-top: 100px;
   width: 1000px;
   height: 300px;
-
   display: flex;
   flex-direction: row;
-
   box-shadow: 2px 2px 2px 2px white, 0.3em 0.3em 1em rgba(143, 139, 139, 0.6);
 }
 .image1 {
-  background-image: url("./img/image1.png");
+  background-image: url("../img/image1.png");
   width: 200px;
   height: 300px;
   background-size: 100%;
@@ -159,9 +168,10 @@
   margin-top: 100px;
 }
 .bodytable {
+  width: 1100px;
+
   margin-top: 50px;
   margin-bottom: 100px;
-  margin-left: 220px;
 }
 .bodytable button {
   margin-left: 35px;
@@ -240,7 +250,7 @@
   height: 20px;
   background-size: 100%;
   background-repeat: no-repeat;
-  background-image: url("./img/calendar.jpg");
+  background-image: url("../img/calendar.jpg");
   margin-right: 10px;
 }
 .cont2 div {
@@ -249,20 +259,20 @@
   height: 30px;
   background-size: 100%;
   background-repeat: no-repeat;
-  background-image: url("./img/hour.png");
+  background-image: url("../img/hour.png");
 }
 .cont3 div {
   width: 27px;
   height: 27px;
   background-size: 100%;
   background-repeat: no-repeat;
-  background-image: url("./img/video.jpg");
+  background-image: url("../img/video.jpg");
   margin-right: 10px;
 }
 .headerCont button {
   width: 123px;
   height: 24px;
-  background-color: #ffab43;
+
   line-height: 17px;
   font-weight: 400;
   font-size: 14px;
@@ -272,6 +282,17 @@
   border-radius: 5px;
   cursor: pointer;
 }
+.contbutt1 {
+  background-color: #ffab43;
+}
+.contbutt {
+  background-color: #1bd741;
+}
+
+.contbutt2 {
+  background-color: rgb(249, 95, 95);
+}
+
 .headerCont button:hover {
   color: rgb(255, 255, 255);
 }
@@ -283,11 +304,22 @@
 }
 
 .contlogo {
-  background-image: url("./img//profil-logo.jpg");
   width: 150px;
   height: 150px;
   background-size: cover;
   background-repeat: no-repeat;
+}
+.logo1 {
+  background-image: url("../img//profil-logo.jpg");
+}
+.logo2 {
+  background-image: url("../img//profil-logo.jpg");
+}
+.logo3 {
+  background-image: url("../img//profil-logo.jpg");
+}
+.logo4 {
+  background-image: url("../img//profil-logo.jpg");
 }
 .conttext {
   display: flex;
@@ -353,4 +385,11 @@
 }
 .contbut2:hover {
   color: black;
+}
+
+.bodyConteiner {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }

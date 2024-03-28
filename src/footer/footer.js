@@ -1,8 +1,9 @@
 import FooterLogo from "./footerlogo";
 import FooterContact from "./footercontact";
 import FooterHelp from "./footerhelp";
+import "./footer.css";
 
-function Footer(params) {
+function Footer() {
   return (
     <div className="footer">
       <div className="footermain">
