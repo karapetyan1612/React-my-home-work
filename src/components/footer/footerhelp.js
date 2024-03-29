@@ -1,9 +1,9 @@
 import { useContext } from "react";
-import CreatButton from "../CreatButton";
-import FooterContext from "./footerLenguageContext";
+import CreatButton from "../button/CreatButton";
+import CreatTranslate from "../translate/CreatTranslate";
 
-function FooterHelp(params) {
-  const t = useContext(FooterContext);
+function FooterHelp() {
+  const t = useContext(CreatTranslate).value;
   return (
     <div className="footerhelp">
       <CreatButton>{t.help1}</CreatButton>

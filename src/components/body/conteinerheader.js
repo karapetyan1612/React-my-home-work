@@ -1,9 +1,9 @@
 import { useContext } from "react";
-import BodyContext from "./BodyLenguageContext";
-import CreatButton from "../CreatButton";
+import CreatTranslate from "../translate/CreatTranslate";
+import CreatButton from "../button/CreatButton";
 
 function HeaderCont(params) {
-  const t = useContext(BodyContext);
+  const t = useContext(CreatTranslate);
   return (
     <div className="headerCont">
       <div className="headerCont1">
@@ -17,7 +17,7 @@ function HeaderCont(params) {
         </div>
         <div className="cont3">
           <div></div>
-          <span>{t.video}</span>
+          <span>{t.value.video}</span>
         </div>
       </div>
       <CreatButton className={params.date.class}>

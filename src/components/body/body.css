@@ -75,7 +75,7 @@
 .counseimg {
   height: 500px;
   width: 350px;
-  background-image: url("../img/image.png");
+  background-image: url("../../img/image.png");
   background-size: 100%;
   background-repeat: no-repeat;
   margin-left: -90px;
@@ -94,7 +94,7 @@
   box-shadow: 2px 2px 2px 2px white, 0.3em 0.3em 1em rgba(143, 139, 139, 0.6);
 }
 .image1 {
-  background-image: url("../img/image1.png");
+  background-image: url("../../img/image1.png");
   width: 200px;
   height: 300px;
   background-size: 100%;
@@ -250,7 +250,7 @@
   height: 20px;
   background-size: 100%;
   background-repeat: no-repeat;
-  background-image: url("../img/calendar.jpg");
+  background-image: url("../../img/calendar.jpg");
   margin-right: 10px;
 }
 .cont2 div {
@@ -259,14 +259,14 @@
   height: 30px;
   background-size: 100%;
   background-repeat: no-repeat;
-  background-image: url("../img/hour.png");
+  background-image: url("../../img/hour.png");
 }
 .cont3 div {
   width: 27px;
   height: 27px;
   background-size: 100%;
   background-repeat: no-repeat;
-  background-image: url("../img/video.jpg");
+  background-image: url("../../img/video.jpg");
   margin-right: 10px;
 }
 .headerCont button {
@@ -310,16 +310,16 @@
   background-repeat: no-repeat;
 }
 .logo1 {
-  background-image: url("../img//profil-logo.jpg");
+  background-image: url("../../img//profil-logo.jpg");
 }
 .logo2 {
-  background-image: url("../img//profil-logo.jpg");
+  background-image: url("../../img//profil-logo.jpg");
 }
 .logo3 {
-  background-image: url("../img//profil-logo.jpg");
+  background-image: url("../../img//profil-logo.jpg");
 }
 .logo4 {
-  background-image: url("../img//profil-logo.jpg");
+  background-image: url("../../img//profil-logo.jpg");
 }
 .conttext {
   display: flex;

@@ -1,8 +1,8 @@
 import { useContext } from "react";
-import BodyContext from "./BodyLenguageContext";
-import CreatButton from "../CreatButton";
+import CreatTranslate from "../translate/CreatTranslate";
+import CreatButton from "../button/CreatButton";
 function BodyCont(props) {
-  const t = useContext(BodyContext);
+  const t = useContext(CreatTranslate);
   return (
     <div className="bodyCont">
       <div className="bodycont1">
@@ -14,8 +14,8 @@ function BodyCont(props) {
         </div>
       </div>
       <div className="bodycont2">
-        <CreatButton className="contbut1">{t.contbutt}</CreatButton>
-        <CreatButton className="contbut2">{t.butcont}</CreatButton>
+        <CreatButton className="contbut1">{t.value.contbutt}</CreatButton>
+        <CreatButton className="contbut2">{t.value.butcont}</CreatButton>
       </div>
     </div>
   );

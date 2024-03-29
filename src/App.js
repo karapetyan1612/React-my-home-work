@@ -1,56 +1,38 @@
 import { useState } from "react";
 import "./App.css";
-
-import Header from "./header/header.js";
-import HeaderContext from "./header/HeaderLenguageContext.js";
-import BodyContext from "./body/BodyLenguageContext.js";
-import { HeaderRu } from "./header/headtranslate.js";
-import { HeaderEn } from "./header/headtranslate.js";
-import Body from "./body/body.js";
-import { BodyEn } from "./body/bodytranslate.js";
-import { BodyRu } from "./body/bodytranslate.js";
-import FooterContext from "./footer/footerLenguageContext.js";
-import { Footer } from "./footer/footer.js";
-import { FooterRu } from "./footer/footerTranslet.js";
-import { FooterEn } from "./footer/footerTranslet.js";
+import Header from "./components/header/header.jsx";
+import Body from "./components/body/body.jsx";
+import Footer from "./components/footer/footer.jsx";
+import { TranslateEn, TranslateRu } from "./components/translate/translate.jsx";
+import CreatTranslate from "./components/translate/CreatTranslate.jsx";
 
 function App() {
-  const [headlenguage, setHeadLenguage] = useState(HeaderRu);
-  const [bodylenguage, setBodyLenguage] = useState(BodyRu);
-  const [footerlenguage, setFooterLenguage] = useState(FooterRu);
+  const [Translate, setTranslate] = useState(TranslateRu);
   const [buttonColor, setButtonColor] = useState(true);
 
   const LenguageRU = function () {
-    setHeadLenguage(HeaderRu);
-    setBodyLenguage(BodyRu);
-    setFooterLenguage(FooterRu);
+    setTranslate(TranslateRu);
     setButtonColor(!buttonColor);
   };
   const LenguageEN = function () {
-    setHeadLenguage(HeaderEn);
-    setBodyLenguage(BodyEn);
-    setFooterLenguage(FooterEn);
+    setTranslate(TranslateEn);
     setButtonColor(!buttonColor);
   };
 
   return (
     <div className="main">
-      <HeaderContext.Provider
+      <CreatTranslate.Provider
         value={{
-          value: headlenguage,
+          value: Translate,
           LenguageRu: LenguageRU,
           LenguageEn: LenguageEN,
           Color: buttonColor,
         }}
       >
         <Header></Header>
-      </HeaderContext.Provider>
-      <BodyContext.Provider value={bodylenguage}>
         <Body></Body>
-      </BodyContext.Provider>
-      <FooterContext.Provider value={footerlenguage}>
         <Footer></Footer>
-      </FooterContext.Provider>
+      </CreatTranslate.Provider>
     </div>
   );
 }

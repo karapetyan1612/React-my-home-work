@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import HeaderAccount from "./header-account";
-import HeaderContext from "./HeaderLenguageContext";
+import CreatTranslate from "../translate/CreatTranslate";
 
 function HeaderBody() {
   return (
@@ -15,7 +15,7 @@ function HeaderBody() {
 export default HeaderBody;
 
 function BodyFrame() {
-  const t = useContext(HeaderContext);
+  const t = useContext(CreatTranslate);
   return (
     <div className="BodyFrame">
       <button className="BodyFrameButton">{t.value.bodyframe1}</button>

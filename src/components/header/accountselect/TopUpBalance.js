@@ -1,8 +1,8 @@
 import { useContext } from "react";
-import HeaderContext from "./HeaderLenguageContext";
+import CreatTranslate from "../../translate/CreatTranslate";
 
 function TopUpBalance() {
-  const t = useContext(HeaderContext);
+  const t = useContext(CreatTranslate);
   return <button className="select">{t.value.balans}</button>;
 }
 

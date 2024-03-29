@@ -1,10 +1,10 @@
 import { useContext } from "react";
-import FooterContext from "./footerLenguageContext";
+import CreatTranslate from "../translate/CreatTranslate";
 import LogoComp from "./logocomp";
-import CreatButton from "../CreatButton";
+import CreatButton from "../button/CreatButton";
 
 function FooterLogo() {
-  const t = useContext(FooterContext);
+  const t = useContext(CreatTranslate).value;
   return (
     <div className="footerlogo">
       <div className="footlogo"></div>

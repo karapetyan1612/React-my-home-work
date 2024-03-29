@@ -1,4 +1,4 @@
-import CreatButton from "../CreatButton";
+import CreatButton from "../button/CreatButton";
 
 function LogoComp(params) {
   return (

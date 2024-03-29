@@ -1,6 +1,7 @@
 import { useCallback, useContext, useState } from "react";
-import HeaderContext from "./HeaderLenguageContext";
-import AccountSelect from "./accountselect";
+import AccountSelect from "./accountselect/accountselect";
+import CreatTranslate from "../translate/CreatTranslate";
+import Translate from "./translateButton";
 
 function HeaderAccount() {
   const [isShow, Show] = useState(false);
@@ -13,7 +14,7 @@ function HeaderAccount() {
     }
   }, [isShow]);
 
-  const t = useContext(HeaderContext);
+  const t = useContext(CreatTranslate);
 
   return (
     <>
@@ -30,27 +31,6 @@ function HeaderAccount() {
       </div>
       {isShow ? <AccountSelect></AccountSelect> : null}
     </>
-  );
-}
-
-function Translate() {
-  const t = useContext(HeaderContext);
-
-  return (
-    <div className="translate">
-      <button
-        className={t.Color ? "hedaerblue" : "hedaerwhite"}
-        onClick={t.LenguageRu}
-      >
-        Ru
-      </button>
-      <button
-        className={t.Color ? "hedaerwhite" : "hedaerblue"}
-        onClick={t.LenguageEn}
-      >
-        En
-      </button>
-    </div>
   );
 }
 

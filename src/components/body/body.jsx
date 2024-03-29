@@ -1,13 +1,14 @@
 import { useContext } from "react";
 import Appointment from "./appointment";
 import Countseling from "./counseling";
-import BodyContext from "./BodyLenguageContext";
+import CreatTranslate from "../translate/CreatTranslate";
 import { Comment } from "./comment";
-import CreatButton from "../CreatButton";
+import CreatButton from "../button/CreatButton";
 import "./body.css";
 
 function Body(params) {
-  const t = useContext(BodyContext);
+  const t = useContext(CreatTranslate);
+  console.log(t);
   return (
     <div className="Body">
       <div className="bodyCounseling">
@@ -15,7 +16,7 @@ function Body(params) {
         <Appointment></Appointment>
       </div>
       <div className="bodydivbut">
-        <CreatButton className="bodybut1">{t.bodybut}</CreatButton>
+        <CreatButton className="bodybut1">{t.value.bodybut}</CreatButton>
       </div>
       <Comment></Comment>
     </div>

@@ -1,8 +1,8 @@
 import { useContext } from "react";
-import FooterContext from "./footerLenguageContext";
+import CreatTranslate from "../translate/CreatTranslate";
 
 function FooterContact(params) {
-  const t = useContext(FooterContext);
+  const t = useContext(CreatTranslate).value;
   return (
     <div className="footercontact">
       <div>

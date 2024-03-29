@@ -1,8 +1,8 @@
-import HeaderContext from "./HeaderLenguageContext";
 import { useContext } from "react";
+import CreatTranslate from "../../translate/CreatTranslate";
 
 function FAQ() {
-  const t = useContext(HeaderContext);
+  const t = useContext(CreatTranslate);
   return <button className="select">{t.value.FAQ}</button>;
 }
 
