@@ -1,12 +1,27 @@
 import { useContext } from "react";
 import CreatTranslate from "../translate/CreatTranslate";
 import CreatButton from "../button/CreatButton";
+import { Link } from "react-router-dom";
+
+const GetProfil = function (event) {
+  let target = event.target;
+  const id = target.getAttribute("id");
+  localStorage.setItem("id", id);
+};
+
 function BodyCont(props) {
   const t = useContext(CreatTranslate);
   return (
     <div className="bodyCont">
       <div className="bodycont1">
-        <div className={props.date.classname}></div>
+        <Link to={"/profil"}>
+          <div
+            className={props.date.classname}
+            onClick={GetProfil}
+            id={props.date.id}
+          ></div>
+        </Link>
+
         <div className="conttext">
           <span className="contextspan1">{props.date.name}</span>
           <span className="contextspan2">{props.date.profession}</span>

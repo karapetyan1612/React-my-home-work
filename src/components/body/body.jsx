@@ -8,7 +8,6 @@ import "./body.css";
 
 function Body(params) {
   const t = useContext(CreatTranslate);
-  console.log(t);
   return (
     <div className="Body">
       <div className="bodyCounseling">

@@ -1,12 +1,12 @@
 import { useCallback, useContext, useState, useMemo } from "react";
 import CreatTranslate from "../translate/CreatTranslate";
-import { CommentArray } from "./commentarray";
 import CreatButton from "../button/CreatButton";
 import BodyCont from "./bodycont";
 import HeaderCont from "./conteinerheader";
 
 function Comment() {
   const t = useContext(CreatTranslate);
+  const CommentArray = t.comment;
   const [status, setStatus] = useState(0);
 
   const ArrFunc1 = useCallback(() => {

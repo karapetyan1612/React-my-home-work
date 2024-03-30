@@ -304,10 +304,12 @@
 }
 
 .contlogo {
+  cursor: pointer;
   width: 150px;
   height: 150px;
   background-size: cover;
   background-repeat: no-repeat;
+  border-radius: 50%;
 }
 .logo1 {
   background-image: url("../../img//profil-logo.jpg");
