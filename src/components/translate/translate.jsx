@@ -41,6 +41,12 @@ const TranslateRu = {
   address: "г. Москва. ул, Ленина 54, офис 51",
   date: "Пн-Вс с 09:00 до 18:00",
   nomer: "8 800 555 35 35",
+  balans1: "Баланс",
+  toupbalans: "Пополнить счет",
+  payment: "История платежей",
+  today: "За сегодня",
+  month: "За месяц",
+  time: "За все время",
 };
 const TranslateEn = {
   bodyframe1: "How to use?",
@@ -87,5 +93,11 @@ const TranslateEn = {
   address: "Moscow city. st., Lenina 54, office 51",
   date: "Mon-Sun from 09:00 to 18:00",
   nomer: "8 800 555 35 35",
+  balans1: "Balance",
+  toupbalans: "Top up your account",
+  payment: "payment history",
+  today: "For today",
+  month: "Per month",
+  time: "During all this time",
 };
 export { TranslateRu, TranslateEn };

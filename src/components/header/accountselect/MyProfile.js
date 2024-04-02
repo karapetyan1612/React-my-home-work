@@ -1,9 +1,14 @@
 import { useContext } from "react";
 import CreatTranslate from "../../translate/CreatTranslate";
+import { Link } from "react-router-dom";
 
 function MyProfil(params) {
   const t = useContext(CreatTranslate);
-  return <button className="select">{t.value.profil}</button>;
+  return (
+    <Link to={"/"}>
+      <button className="select">{t.value.profil}</button>
+    </Link>
+  );
 }
 
 export default MyProfil;

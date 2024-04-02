@@ -183,21 +183,9 @@ body {
   flex-direction: column;
   border-radius: 10px;
 }
-/* .myProfil-button {
-  border: 0;
-  border-bottom: 1px solid rgb(154, 153, 153);
-  background-color: white;
-  height: 30px;
-  cursor: pointer;
-}
-.balance-button {
-  border: 0;
-  border-bottom: 1px solid rgb(154, 153, 153);
-  background-color: white;
-  height: 30px;
-  cursor: pointer;
-} */
+
 .select {
+  width: 100%;
   border: 0;
   border-bottom: 1px solid rgb(154, 153, 153);
   background-color: white;
@@ -218,4 +206,20 @@ body {
   position: relative;
   margin-bottom: 84px;
   margin-left: -40px;
+}
+.zapis {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.bodybutzapis {
+  margin-top: 50px;
+  width: 1000px;
+}
+.bodybutzapis span {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 29px;
+  letter-spacing: -0.3px;
+  color: #4f4f4f;
 }
