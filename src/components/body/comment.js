@@ -9,14 +9,10 @@ function Comment() {
   const CommentArray = t.comment;
   const [status, setStatus] = useState(0);
 
-  const ArrFunc1 = useCallback(() => {
-    setStatus(1);
-  }, []);
-  const ArrFunc2 = useCallback(() => {
-    setStatus(2);
-  }, []);
-  const ArrFunc3 = useCallback(() => {
-    setStatus(3);
+  const ArrFunc = useCallback((index) => {
+    return () => {
+      setStatus(index);
+    };
   }, []);
 
   const list = useMemo(() => {
@@ -25,9 +21,9 @@ function Comment() {
         return [].push(item);
       }
     });
-    return ArrayMemo.map((item) => {
+    return ArrayMemo.map((item, index) => {
       return (
-        <div className="comment">
+        <div className="comment" key={index}>
           <div className="conteiner">
             <HeaderCont date={item}></HeaderCont>
             <BodyCont date={item}></BodyCont>
@@ -40,9 +36,9 @@ function Comment() {
   return (
     <div className="bodyConteiner">
       <div className="bodytable">
-        <CreatButton onClick={ArrFunc1}>{t.value.bodytableA}</CreatButton>
-        <CreatButton onClick={ArrFunc2}>{t.value.bodytableB}</CreatButton>
-        <CreatButton onClick={ArrFunc3}>{t.value.bodytableC}</CreatButton>
+        <CreatButton onClick={ArrFunc(1)}>{t.value.bodytableA}</CreatButton>
+        <CreatButton onClick={ArrFunc(2)}>{t.value.bodytableB}</CreatButton>
+        <CreatButton onClick={ArrFunc(3)}>{t.value.bodytableC}</CreatButton>
       </div>
       {list}
     </div>

@@ -1,7 +1,7 @@
 import { useContext } from "react";
-import { Comment } from "../body/comment";
-import CreatTranslate from "../translate/CreatTranslate";
-import "../../App.css";
+import { Comment } from "../components/body/comment";
+import CreatTranslate from "../components/translate/CreatTranslate";
+import "../App.css";
 
 function Zapis() {
   const t = useContext(CreatTranslate);

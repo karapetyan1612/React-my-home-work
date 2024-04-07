@@ -1,40 +1,20 @@
-import { useContext, useMemo, useState } from "react";
+import { useCallback, useContext, useMemo, useState } from "react";
 import CreatButton from "../button/CreatButton";
 import CreatTranslate from "../translate/CreatTranslate";
 
 function BalansConteiner(params) {
   const t = useContext(CreatTranslate);
-  const [color, setColor] = useState(false);
-  const [color1, setColor1] = useState(false);
-  const [color2, setColor2] = useState(false);
-  const [status, setStatus] = useState(0);
-  const [id, setId] = useState(0);
+  const [index, setIndex] = useState(0);
 
-  const func1 = function () {
-    setColor(true);
-    setColor1(false);
-    setColor2(false);
-    setStatus(1);
-    setId(0);
-  };
-  const func2 = function () {
-    setColor(false);
-    setColor1(true);
-    setColor2(false);
-    setStatus(2);
-    setId(0);
-  };
-  const func3 = function () {
-    setColor(false);
-    setColor1(false);
-    setColor2(true);
-    setStatus(0);
-    setId(3);
-  };
+  const func = useCallback((index) => {
+    return () => {
+      setIndex(index);
+    };
+  }, []);
 
   const list = useMemo(() => {
     const ArrayMemo = t.balans.filter((item) => {
-      if (item.status === status || item.id === id) {
+      if (item.status === index + 1 || index === 2) {
         return [].push(item);
       }
     });
@@ -52,26 +32,26 @@ function BalansConteiner(params) {
         </div>
       );
     });
-  }, [status, id, t.balans]);
+  }, [index, t.balans]);
 
   return (
     <div className="balansconteiner">
       <div className="balanshelp">
         <CreatButton
-          onClick={func1}
-          className={color ? "balanshelpgray" : "balanshelpwhite"}
+          onClick={func(0)}
+          className={index === 0 ? "balanshelpgray" : "balanshelpwhite"}
         >
           {t.value.today}
         </CreatButton>
         <CreatButton
-          onClick={func2}
-          className={color1 ? "balanshelpgray" : "balanshelpwhite"}
+          onClick={func(1)}
+          className={index === 1 ? "balanshelpgray" : "balanshelpwhite"}
         >
           {t.value.month}
         </CreatButton>
         <CreatButton
-          onClick={func3}
-          className={color2 ? "balanshelpgray" : "balanshelpwhite"}
+          onClick={func(2)}
+          className={index === 2 ? "balanshelpgray" : "balanshelpwhite"}
         >
           {t.value.time}
         </CreatButton>

@@ -1,5 +1,5 @@
 import React from "react";
-import HeaderBody from "./header-body";
+import HeaderBody from "../components/header/header-body";
 import { Link } from "react-router-dom";
 
 function Header() {

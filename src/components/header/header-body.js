@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import HeaderAccount from "./header-account";
 import CreatTranslate from "../translate/CreatTranslate";
+import { Link } from "react-router-dom";
 
 function HeaderBody() {
   return (
@@ -18,9 +19,16 @@ function BodyFrame() {
   const t = useContext(CreatTranslate);
   return (
     <div className="BodyFrame">
-      <button className="BodyFrameButton">{t.value.bodyframe1}</button>
-      <button className="BodyFrameButton">{t.value.bodyframe2}</button>
-      <button className="BodyFrameButton">{t.value.bodyframe2}</button>
+      <Link to={"*"}>
+        <button className="BodyFrameButton">{t.value.bodyframe1}</button>
+      </Link>
+
+      <Link to={"/zapis"}>
+        <button className="BodyFrameButton">{t.value.bodyframe2}</button>
+      </Link>
+      <Link to={"*"}>
+        <button className="BodyFrameButton">{t.value.bodyframe3}</button>
+      </Link>
     </div>
   );
 }

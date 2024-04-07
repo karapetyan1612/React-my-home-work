@@ -1,10 +1,10 @@
 import { useContext } from "react";
-import Appointment from "./appointment";
-import Countseling from "./counseling";
-import CreatTranslate from "../translate/CreatTranslate";
-import { Comment } from "./comment";
-import CreatButton from "../button/CreatButton";
-import "./body.css";
+import Appointment from "../components/body/appointment";
+import Countseling from "../components/body/counseling";
+import CreatTranslate from "../components/translate/CreatTranslate";
+import { Comment } from "../components/body/comment";
+import CreatButton from "../components/button/CreatButton";
+import "../components/body/body.css";
 import { Link } from "react-router-dom";
 
 function Body(params) {

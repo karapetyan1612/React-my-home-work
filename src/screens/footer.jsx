@@ -1,7 +1,7 @@
-import FooterLogo from "./footerlogo";
-import FooterContact from "./footercontact";
-import FooterHelp from "./footerhelp";
-import "./footer.css";
+import FooterLogo from "../components/footer/footerlogo";
+import FooterContact from "../components/footer/footercontact";
+import FooterHelp from "../components/footer/footerhelp";
+import "../components/footer/footer.css";
 
 function Footer() {
   return (

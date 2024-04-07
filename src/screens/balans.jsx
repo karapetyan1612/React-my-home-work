@@ -1,8 +1,8 @@
 import { useContext } from "react";
-import BalansConteiner from "./balanConteiner";
-import "./balans.css";
-import Balanshedaer from "./balanshedaer";
-import CreatTranslate from "../translate/CreatTranslate";
+import BalansConteiner from "../components/balans/balanConteiner";
+import ".././components/balans/balans.css";
+import Balanshedaer from "../components/balans/balanshedaer";
+import CreatTranslate from "../components/translate/CreatTranslate";
 function Balans() {
   const t = useContext(CreatTranslate);
   return (

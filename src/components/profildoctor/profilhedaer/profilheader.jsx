@@ -1,18 +1,7 @@
-import { useContext } from "react";
-import CreatTranslate from "../../translate/CreatTranslate";
 import HedaerData from "./hedaerdata";
 
-function ProfilHedaer() {
-  const t = useContext(CreatTranslate);
-  const CommentArray = t.comment;
-
-  const localId = localStorage.getItem("id");
-
-  const ArrayMemo = CommentArray.filter((item) => {
-    if (item.id == localId) {
-      return [].push(item);
-    }
-  });
+function ProfilHedaer(params) {
+  const ArrayMemo = params.arr;
   return (
     <div className="headprof">
       <div className="profilhedaer">
@@ -23,7 +12,7 @@ function ProfilHedaer() {
           <p>{">"}</p>
           <span className="med1">{ArrayMemo[0].profilvrach}</span>
         </div>
-        <HedaerData></HedaerData>
+        <HedaerData arr={params.arr}></HedaerData>
       </div>
     </div>
   );

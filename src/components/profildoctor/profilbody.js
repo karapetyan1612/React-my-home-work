@@ -1,17 +1,5 @@
-import { useContext } from "react";
-import CreatTranslate from "../translate/CreatTranslate";
-
 function ProfilBody(params) {
-  const t = useContext(CreatTranslate);
-  const CommentArray = t.comment;
-
-  const localId = localStorage.getItem("id");
-
-  const ArrayMemo = CommentArray.filter((item) => {
-    if (item.id == localId) {
-      return [].push(item);
-    }
-  });
+  const ArrayMemo = params.arr;
   return (
     <div className="profilbody">
       <div className="profilbodyleft">
