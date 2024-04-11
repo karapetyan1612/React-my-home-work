@@ -2,11 +2,14 @@ import { useParams } from "react-router-dom";
 import "../components/profildoctor/profil.css";
 import ProfilBody from "../components/profildoctor/profilbody.js";
 import ProfilHedaer from "../components/profildoctor/profilhedaer/profilheader.jsx";
-import { useContext, useMemo } from "react";
+import { useContext, useEffect, useMemo } from "react";
 import CreatTranslate from "../components/translate/CreatTranslate.jsx";
 
 function ProfilDoctor() {
   let { id } = useParams();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const t = useContext(CreatTranslate);
   const CommentArray = t.comment;

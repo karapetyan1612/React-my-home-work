@@ -1,18 +1,29 @@
-import { useCallback, useContext, useMemo, useState } from "react";
+import { useCallback, useContext, useEffect, useMemo, useState } from "react";
 import AccountSelect from "./accountselect/accountselect";
 import CreatTranslate from "../translate/CreatTranslate";
 import Translate from "./translateButton";
 
 function HeaderAccount() {
   const [isShow, Show] = useState(false);
-
-  const ClickArrow = useCallback(() => {
-    if (isShow === false) {
-      Show(true);
-    } else {
-      Show(false);
-    }
+  useEffect(() => {
+    document.onclick = () => {
+      if (isShow) {
+        Show(false);
+      }
+    };
   }, [isShow]);
+
+  const ClickArrow = useCallback(
+    (event) => {
+      event.stopPropagation();
+      if (isShow === false) {
+        Show(true);
+      } else {
+        Show(false);
+      }
+    },
+    [isShow]
+  );
 
   const t = useContext(CreatTranslate);
 
