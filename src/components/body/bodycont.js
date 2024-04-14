@@ -1,10 +1,9 @@
-import { useContext } from "react";
-import CreatTranslate from "../translate/CreatTranslate";
 import CreatButton from "../button/CreatButton";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 function BodyCont(props) {
-  const t = useContext(CreatTranslate);
+  const { t } = useTranslation();
 
   return (
     <div className="bodyCont">
@@ -20,8 +19,10 @@ function BodyCont(props) {
         </div>
       </div>
       <div className="bodycont2">
-        <CreatButton className="contbut1">{t.value.contbutt}</CreatButton>
-        <CreatButton className="contbut2">{t.value.butcont}</CreatButton>
+        <CreatButton className="contbut1">
+          {t("glxavorEj.contbutt")}
+        </CreatButton>
+        <CreatButton className="contbut2">{t("glxavorEj.butcont")}</CreatButton>
       </div>
     </div>
   );

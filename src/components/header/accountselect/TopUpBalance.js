@@ -1,12 +1,11 @@
-import { useContext } from "react";
-import CreatTranslate from "../../translate/CreatTranslate";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 function TopUpBalance() {
-  const t = useContext(CreatTranslate);
+  const { t } = useTranslation();
   return (
     <Link to={"/balans"}>
-      <button className="select">{t.value.balans}</button>
+      <button className="select">{t("glxavorEj.balans")}</button>
     </Link>
   );
 }

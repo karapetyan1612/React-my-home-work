@@ -2,8 +2,9 @@ import { useParams } from "react-router-dom";
 import "../components/profildoctor/profil.css";
 import ProfilBody from "../components/profildoctor/profilbody.js";
 import ProfilHedaer from "../components/profildoctor/profilhedaer/profilheader.jsx";
-import { useContext, useEffect, useMemo } from "react";
-import CreatTranslate from "../components/translate/CreatTranslate.jsx";
+import { useEffect, useMemo } from "react";
+
+import { useTranslation } from "react-i18next";
 
 function ProfilDoctor() {
   let { id } = useParams();
@@ -11,13 +12,18 @@ function ProfilDoctor() {
     window.scrollTo(0, 0);
   }, []);
 
-  const t = useContext(CreatTranslate);
-  const CommentArray = t.comment;
-  const ArrayMemo = CommentArray.filter((item) => {
-    if (item.id == id) {
-      return [].push(item);
-    }
-  });
+  const { t } = useTranslation();
+
+  const arr = t("commentArray", { returnObjects: true });
+
+  const ArrayMemo = useMemo(() => {
+    return arr.filter((item) => {
+      if (+item.id === +id) {
+        return [].push(item);
+      }
+    });
+  }, [arr, id]);
+
   return (
     <div className="profildoctor">
       <ProfilHedaer arr={ArrayMemo}></ProfilHedaer>

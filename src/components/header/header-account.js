@@ -1,7 +1,7 @@
-import { useCallback, useContext, useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import AccountSelect from "./accountselect/accountselect";
-import CreatTranslate from "../translate/CreatTranslate";
 import Translate from "./translateButton";
+import { useTranslation } from "react-i18next";
 
 function HeaderAccount() {
   const [isShow, Show] = useState(false);
@@ -25,17 +25,17 @@ function HeaderAccount() {
     [isShow]
   );
 
-  const t = useContext(CreatTranslate);
+  const { t } = useTranslation();
 
   return (
     <>
       <div className="header-account">
         <div className="header-account-logo">
-          <span>{t.value.name[0]}</span>
+          <span>{t("glxavorEj.name")[0]}</span>
         </div>
         <div className="header-account-name">
-          <span className="name1">{t.value.name} </span>
-          <span>{t.value.surname}</span>
+          <span className="name1">{t("glxavorEj.name")} </span>
+          <span>{t("glxavorEj.surname")}</span>
         </div>
         <button className="header-account-arrow" onClick={ClickArrow}></button>
         <Translate></Translate>

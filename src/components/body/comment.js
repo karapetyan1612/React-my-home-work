@@ -1,44 +1,48 @@
-import { useCallback, useContext, useState, useMemo } from "react";
-import CreatTranslate from "../translate/CreatTranslate";
+import { useCallback, useState, useMemo } from "react";
 import CreatButton from "../button/CreatButton";
 import BodyCont from "./bodycont";
 import HeaderCont from "./conteinerheader";
+import { useTranslation } from "react-i18next";
+import publicAPI from "../../services/api/publicAPI";
 
 function Comment() {
-  const t = useContext(CreatTranslate);
-  const CommentArray = t.comment;
-  const [status, setStatus] = useState(0);
+  const { t } = useTranslation();
+  const [data, setData] = useState([]);
+  const arr = t("commentArray", { returnObjects: true });
 
   const ArrFunc = useCallback((index) => {
     return () => {
-      setStatus(index);
+      publicAPI.get(`/?page=1&category=${index}`).then((res) => {
+        setData([res.data]);
+      });
     };
   }, []);
 
   const list = useMemo(() => {
-    const ArrayMemo = CommentArray.filter((item) => {
-      if (item.status === status) {
-        return [].push(item);
-      }
-    });
-    return ArrayMemo.map((item, index) => {
+    return data.map((item, index) => {
       return (
         <div className="comment" key={index}>
           <div className="conteiner">
-            <HeaderCont date={item}></HeaderCont>
-            <BodyCont date={item}></BodyCont>
+            <HeaderCont date={item.results}></HeaderCont>
+            <BodyCont date={item.results}></BodyCont>
           </div>
         </div>
       );
     });
-  }, [status]);
+  }, [data]);
 
   return (
     <div className="bodyConteiner">
       <div className="bodytable">
-        <CreatButton onClick={ArrFunc(1)}>{t.value.bodytableA}</CreatButton>
-        <CreatButton onClick={ArrFunc(2)}>{t.value.bodytableB}</CreatButton>
-        <CreatButton onClick={ArrFunc(3)}>{t.value.bodytableC}</CreatButton>
+        <CreatButton onClick={ArrFunc(1)}>
+          {t("glxavorEj.bodytableA")}
+        </CreatButton>
+        <CreatButton onClick={ArrFunc(2)}>
+          {t("glxavorEj.bodytableB")}
+        </CreatButton>
+        <CreatButton onClick={ArrFunc(4)}>
+          {t("glxavorEj.bodytableC")}
+        </CreatButton>
       </div>
       {list}
     </div>

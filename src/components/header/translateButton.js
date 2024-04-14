@@ -1,19 +1,20 @@
-import { useContext } from "react";
-import CreatTranslate from "../translate/CreatTranslate";
-
+import i18n from "../../services/i18n";
 function Translate() {
-  const t = useContext(CreatTranslate);
   return (
     <div className="translate">
       <button
-        className={t.Color ? "hedaerblue" : "hedaerwhite"}
-        onClick={t.LenguageRu}
+        className={i18n.language === "ru" ? "hedaerblue" : "hedaerwhite"}
+        onClick={() => {
+          i18n.changeLanguage("ru");
+        }}
       >
         Ru
       </button>
       <button
-        className={t.Color ? "hedaerwhite" : "hedaerblue"}
-        onClick={t.LenguageEn}
+        className={i18n.language === "en" ? "hedaerblue" : "hedaerwhite"}
+        onClick={() => {
+          i18n.changeLanguage("en");
+        }}
       >
         En
       </button>

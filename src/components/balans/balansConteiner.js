@@ -1,9 +1,9 @@
-import { useCallback, useContext, useMemo, useState } from "react";
+import { useCallback, useMemo, useState } from "react";
 import CreatButton from "../button/CreatButton";
-import CreatTranslate from "../translate/CreatTranslate";
+import { useTranslation } from "react-i18next";
 
 function BalansConteiner(params) {
-  const t = useContext(CreatTranslate);
+  const { t } = useTranslation();
   const [index, setIndex] = useState(0);
 
   const func = useCallback((index) => {
@@ -12,13 +12,17 @@ function BalansConteiner(params) {
     };
   }, []);
 
+  const arr = useMemo(() => {
+    return t("balansArr", { returnObjects: true });
+  });
   const list = useMemo(() => {
-    const ArrayMemo = t.balans.filter((item) => {
+    const ArrayMemo = arr.filter((item) => {
       if (item.status === index + 1 || index === 2) {
         return [].push(item);
       }
     });
     return ArrayMemo.map((item) => {
+      console.log(item);
       return (
         <div className="balanscontext">
           <div className="balansconthead">
@@ -32,7 +36,7 @@ function BalansConteiner(params) {
         </div>
       );
     });
-  }, [index, t.balans]);
+  }, [index, arr]);
 
   return (
     <div className="balansconteiner">
@@ -41,19 +45,19 @@ function BalansConteiner(params) {
           onClick={func(0)}
           className={index === 0 ? "balanshelpgray" : "balanshelpwhite"}
         >
-          {t.value.today}
+          {t("glxavorEj.today")}
         </CreatButton>
         <CreatButton
           onClick={func(1)}
           className={index === 1 ? "balanshelpgray" : "balanshelpwhite"}
         >
-          {t.value.month}
+          {t("glxavorEj.month")}
         </CreatButton>
         <CreatButton
           onClick={func(2)}
           className={index === 2 ? "balanshelpgray" : "balanshelpwhite"}
         >
-          {t.value.time}
+          {t("glxavorEj.time")}
         </CreatButton>
       </div>
       {list}

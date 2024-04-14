@@ -1,29 +1,28 @@
-import { useContext } from "react";
-import CreatTranslate from "../translate/CreatTranslate";
 import CreatButton from "../button/CreatButton";
+import { useTranslation } from "react-i18next";
 
 function Appointment() {
-  const t = useContext(CreatTranslate);
+  const { t } = useTranslation();
   return (
     <div className="div11">
       <div className="appointment">
         <div className="image1"></div>
         <div className="appointmentbody">
-          <h1>{t.value.bodyh}</h1>
-          <p>{t.value.bodyp}</p>
+          <h1>{t("glxavorEj.bodyh")}</h1>
+          <p>{t("glxavorEj.bodyp")}</p>
           <div className="bodyul">
             <div></div>
-            <p>{t.value.bodyul}</p>
+            <p>{t("glxavorEj.bodyul")}</p>
           </div>
           <div className="bodyul">
             <div></div>
-            <p>{t.value.bodyull}</p>
+            <p>{t("glxavorEj.bodyull")}</p>
           </div>
           <div className="bodyul">
             <div></div>
-            <p>{t.value.bodyull}</p>
+            <p>{t("glxavorEj.bodyull")}</p>
           </div>
-          <CreatButton>{t.value.but}</CreatButton>
+          <CreatButton>{t("glxavorEj.but")}</CreatButton>
         </div>
       </div>
     </div>

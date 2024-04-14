@@ -1,7 +1,6 @@
-import { useContext } from "react";
 import HeaderAccount from "./header-account";
-import CreatTranslate from "../translate/CreatTranslate";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 function HeaderBody() {
   return (
@@ -16,18 +15,18 @@ function HeaderBody() {
 export default HeaderBody;
 
 function BodyFrame() {
-  const t = useContext(CreatTranslate);
+  const { t } = useTranslation();
   return (
     <div className="BodyFrame">
       <Link to={"*"}>
-        <button className="BodyFrameButton">{t.value.bodyframe1}</button>
+        <button className="BodyFrameButton">{t("glxavorEj.bodyframe1")}</button>
       </Link>
 
       <Link to={"/zapis"}>
-        <button className="BodyFrameButton">{t.value.bodyframe2}</button>
+        <button className="BodyFrameButton">{t("glxavorEj.bodyframe2")}</button>
       </Link>
       <Link to={"*"}>
-        <button className="BodyFrameButton">{t.value.bodyframe3}</button>
+        <button className="BodyFrameButton">{t("glxavorEj.bodyframe3")}</button>
       </Link>
     </div>
   );

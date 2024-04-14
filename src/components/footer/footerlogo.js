@@ -1,16 +1,15 @@
-import { useContext } from "react";
-import CreatTranslate from "../translate/CreatTranslate";
 import LogoComp from "./logocomp";
 import CreatButton from "../button/CreatButton";
+import { useTranslation } from "react-i18next";
 
 function FooterLogo() {
-  const t = useContext(CreatTranslate).value;
+  const { t } = useTranslation();
   return (
     <div className="footerlogo">
       <div className="footlogo"></div>
       <div className="footp">
-        <p>{t.footp}</p>
-        <p>{t.footp1}</p>
+        <p>{t("glxavorEj.footp")}</p>
+        <p>{t("glxavorEj.footp1")}</p>
       </div>
       <LogoComp></LogoComp>
       <div className="downlogo">

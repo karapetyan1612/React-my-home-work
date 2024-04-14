@@ -1,14 +1,13 @@
-import { useContext } from "react";
 import Appointment from "../components/body/appointment";
 import Countseling from "../components/body/counseling";
-import CreatTranslate from "../components/translate/CreatTranslate";
 import { Comment } from "../components/body/comment";
 import CreatButton from "../components/button/CreatButton";
 import "../components/body/body.css";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
-function Body(params) {
-  const t = useContext(CreatTranslate);
+function Body() {
+  const { t } = useTranslation();
   return (
     <div className="Body">
       <div className="bodyCounseling">
@@ -17,7 +16,9 @@ function Body(params) {
       </div>
       <div className="bodydivbut">
         <Link to={"/zapis"}>
-          <CreatButton className="bodybut1">{t.value.bodybut}</CreatButton>
+          <CreatButton className="bodybut1">
+            {t("glxavorEj.bodybut")}
+          </CreatButton>
         </Link>
       </div>
       <Comment></Comment>

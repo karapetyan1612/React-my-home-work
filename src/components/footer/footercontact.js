@@ -1,25 +1,24 @@
-import { useContext } from "react";
-import CreatTranslate from "../translate/CreatTranslate";
+import { useTranslation } from "react-i18next";
 
 function FooterContact(params) {
-  const t = useContext(CreatTranslate).value;
+  const { t } = useTranslation();
   return (
     <div className="footercontact">
       <div>
         <div className="email"></div>
-        <span>{t.email}</span>
+        <span>{t("glxavorEj.email")}</span>
       </div>
       <div>
         <div className="address"></div>
-        <span>{t.address}</span>
+        <span>{t("glxavorEj.address")}</span>
       </div>
       <div>
         <div className="footerdate"></div>
-        <span>{t.date}</span>
+        <span>{t("glxavorEj.date")}</span>
       </div>
       <div>
         <div className="footernomer"></div>
-        <span>{t.nomer}</span>
+        <span>{t("glxavorEj.nomer")}</span>
       </div>
     </div>
   );

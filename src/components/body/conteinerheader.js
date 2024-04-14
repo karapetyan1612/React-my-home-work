@@ -1,15 +1,15 @@
-import { useContext } from "react";
-import CreatTranslate from "../translate/CreatTranslate";
 import CreatButton from "../button/CreatButton";
+import { useTranslation } from "react-i18next";
 
 function HeaderCont(params) {
-  const t = useContext(CreatTranslate);
+  const { t } = useTranslation();
+  console.log(params.date);
   return (
     <div className="headerCont">
       <div className="headerCont1">
         <div className="cont1">
           <div></div>
-          <span>{params.date.date}</span>
+          <span>{params.date[0].date_of_birth}</span>
         </div>
         <div className="cont2">
           <div></div>
@@ -17,7 +17,7 @@ function HeaderCont(params) {
         </div>
         <div className="cont3">
           <div></div>
-          <span>{t.value.video}</span>
+          <span>{t("glxavorEj.video")}</span>
         </div>
       </div>
       <CreatButton className={params.date.class}>

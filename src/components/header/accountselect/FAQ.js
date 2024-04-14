@@ -1,12 +1,11 @@
-import { useContext } from "react";
-import CreatTranslate from "../../translate/CreatTranslate";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 function FAQ() {
-  const t = useContext(CreatTranslate);
+  const { t } = useTranslation();
   return (
     <Link to={"*"}>
-      <button className="select">{t.value.FAQ}</button>
+      <button className="select">{t("glxavorEj.FAQ")}</button>
     </Link>
   );
 }
