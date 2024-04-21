@@ -1,5 +1,6 @@
 {
   "translation": {
+    "lezu": "ro",
     "glxavorEj": {
       "bodyframe1": "How to use?",
       "bodyframe2": "My notes",
@@ -20,9 +21,9 @@
       "bodyull": "Doctors with more than 8 years of experience",
       "bodyulll": "We will explain the cause of the ailment clearly and give a detailed recommendation",
       "bodybut": "MY RECORDS",
-      "bodytableA": "Upcoming",
-      "bodytableB": "Past",
-      "bodytableC": "Canceled",
+      "bodytableA": "Therapist",
+      "bodytableB": "Pediatrician",
+      "bodytableC": "Obstetrician-gynecologist",
       "video": "liaison",
       "contbutt": "Scheduled",
       "commentname": "Name Surname",

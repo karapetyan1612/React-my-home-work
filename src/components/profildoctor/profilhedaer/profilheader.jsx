@@ -1,16 +1,15 @@
 import HedaerData from "./hedaerdata";
 
 function ProfilHedaer(params) {
-  const ArrayMemo = params.arr;
   return (
     <div className="headprof">
       <div className="profilhedaer">
         <div className="prof1">
-          <span className="med">{ArrayMemo[0].vrach}</span>
+          <span className="med"></span>
           <p>{">"}</p>
-          <span className="med">{ArrayMemo[0].pediatr}</span>
+          <span className="med"></span>
           <p>{">"}</p>
-          <span className="med1">{ArrayMemo[0].profilvrach}</span>
+          <span className="med1"></span>
         </div>
         <HedaerData arr={params.arr}></HedaerData>
       </div>

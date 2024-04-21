@@ -1,5 +1,6 @@
 {
   "translation": {
+    "lezu": "ru",
     "glxavorEj": {
       "bodyframe1": "Как пользоваться?",
       "bodyframe2": "Мои записи",
@@ -20,9 +21,9 @@
       "bodyull": "Врачи с опытом работы более 8 лет",
       "bodyulll": "Понятно объясним причину недуга и дадим подробную рекомендацию",
       "bodybut": "МОИ ЗАПИСИ",
-      "bodytableA": "Предстоящие",
-      "bodytableB": "Прошедшие",
-      "bodytableC": "Отмененные",
+      "bodytableA": "Терапевт",
+      "bodytableB": "Педиатр",
+      "bodytableC": "Акушер-гинеколог",
       "video": "Видео связь",
       "commentname": "Имя Фамилия",
       "profession": "Педиатр",

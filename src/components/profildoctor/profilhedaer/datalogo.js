@@ -1,14 +1,16 @@
 function DataLogo(params) {
   const ArrayMemo = params.arr;
-
   return (
     <div className="datalogo">
       <div className="imglogo">
-        <div className="contimglogo logoimg1"></div>
+        <img src={ArrayMemo.profile_image} className="imgprops" />
         <div className="conttextimg">
-          <span className="imgspan1">{ArrayMemo[0].name}</span>
-          <span className="imgspan2">{ArrayMemo[0].profession}</span>
-          <span className="imgspan3">{ArrayMemo[0].staj}</span>
+          <span className="imgspan1">
+            {ArrayMemo.first_name}
+            {ArrayMemo.last_name}
+          </span>
+          <span className="imgspan2">{ArrayMemo.role}</span>
+          {/* <span className="imgspan3">{ArrayMemo[0].staj}</span> */}
         </div>
       </div>
     </div>

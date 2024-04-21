@@ -4,32 +4,47 @@ import BodyCont from "./bodycont";
 import HeaderCont from "./conteinerheader";
 import { useTranslation } from "react-i18next";
 import publicAPI from "../../services/api/publicAPI";
+import { useDispatch, useSelector } from "react-redux";
+import { UserActions } from "../../store/actions";
 
 function Comment() {
   const { t } = useTranslation();
-  const [data, setData] = useState([]);
-  const arr = t("commentArray", { returnObjects: true });
+  const dispatch = useDispatch();
+  const [Index, setIndex] = useState();
+  // const arr = t("commentArray", { returnObjects: true });
 
   const ArrFunc = useCallback((index) => {
     return () => {
-      publicAPI.get(`/?page=1&category=${index}`).then((res) => {
-        setData([res.data]);
-      });
+      publicAPI
+        .get(`/?page=1&category=${index}`)
+
+        .then((res) => {
+          return dispatch(UserActions.setUser(res));
+        })
+        .then(() => {
+          setIndex(index);
+        });
     };
   }, []);
 
+  const select = useSelector(UserActions.setUser).payload.user;
+
   const list = useMemo(() => {
-    return data.map((item, index) => {
+    if (select == null) {
+      return null;
+    } else {
+      const user = select.data.results[0];
+
       return (
-        <div className="comment" key={index}>
+        <div className="comment">
           <div className="conteiner">
-            <HeaderCont date={item.results}></HeaderCont>
-            <BodyCont date={item.results}></BodyCont>
+            <HeaderCont date={user}></HeaderCont>
+            <BodyCont date={user}></BodyCont>
           </div>
         </div>
       );
-    });
-  }, [data]);
+    }
+  }, [select, Index]);
 
   return (
     <div className="bodyConteiner">
@@ -44,7 +59,7 @@ function Comment() {
           {t("glxavorEj.bodytableC")}
         </CreatButton>
       </div>
-      {list}
+      {Index ? list : null}
     </div>
   );
 }
