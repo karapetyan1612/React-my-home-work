@@ -5,40 +5,34 @@ import ProfilHedaer from "../components/profildoctor/profilhedaer/profilheader.j
 import { useEffect, useMemo } from "react";
 
 import { useTranslation } from "react-i18next";
-import publicAPI from "../services/api/publicAPI.js";
-import { UserActions } from "../store/actions/index.js";
+import { doctorsProfileActions } from "../store/actions/index.js";
 import { useDispatch, useSelector } from "react-redux";
+import { doctorProfileSelectors } from "../store/selectors/index.js";
 
 function ProfilDoctor() {
   let { id } = useParams();
   const dispatch = useDispatch();
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
+  const { data, status, error } = useSelector(
+    doctorProfileSelectors.doctorProfile
+  );
 
   const { t } = useTranslation();
 
   // const arr = t("commentArray", { returnObjects: true });
 
   useEffect(() => {
-    fetch(`https://api.allodoc.md/users/user/${id}/?role=doctor`)
-      .then((r) => r.json())
-      .then((res) => {
-        return dispatch(UserActions.userProf(res));
-      });
-  }, []);
+    window.scrollTo(0, 0);
 
-  const select = useSelector(UserActions.userProf).payload.prof;
+    dispatch(doctorsProfileActions.get(id));
+  }, [dispatch]);
 
   const list = useMemo(() => {
-    if (select == null) {
+    if (data == null) {
       return null;
     } else {
-      console.log(select);
-
       return (
         <div className="profildoctor">
-          <ProfilHedaer arr={select}></ProfilHedaer>
+          <ProfilHedaer arr={data}></ProfilHedaer>
           {/* <ProfilBody arr={select}></ProfilBody> */}
         </div>
       );

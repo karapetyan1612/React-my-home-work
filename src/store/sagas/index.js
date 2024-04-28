@@ -1,7 +1,11 @@
-import userSaga from "./userSaga";
+import { takeLatest } from "redux-saga/effects";
+import { DoctorListTypes, DoctorsProfileTypes } from "../types";
+import doctorsListSaga from "./doctorListSaga";
+import doctorsProfileSaga from "./doctorProfileSaga";
 
 function* rootSaga() {
-  yield userSaga();
+  yield takeLatest(DoctorListTypes.REQUEST, doctorsListSaga);
+  yield takeLatest(DoctorsProfileTypes.REQUEST, doctorsProfileSaga);
 }
 
 export default rootSaga;

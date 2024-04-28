@@ -22,7 +22,6 @@ function BalansConteiner(params) {
       }
     });
     return ArrayMemo.map((item) => {
-      console.log(item);
       return (
         <div className="balanscontext">
           <div className="balansconthead">

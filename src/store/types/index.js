@@ -1,3 +1,4 @@
-import * as UserTypes from "./userTypes";
+import * as DoctorListTypes from "./doctorListTypes";
+import * as DoctorsProfileTypes from "./doctorProfileTypes";
 
-export { UserTypes };
+export { DoctorListTypes, DoctorsProfileTypes };

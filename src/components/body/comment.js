@@ -3,48 +3,45 @@ import CreatButton from "../button/CreatButton";
 import BodyCont from "./bodycont";
 import HeaderCont from "./conteinerheader";
 import { useTranslation } from "react-i18next";
-import publicAPI from "../../services/api/publicAPI";
 import { useDispatch, useSelector } from "react-redux";
-import { UserActions } from "../../store/actions";
+import { UserActions, doctorsListActions } from "../../store/actions";
+import { doctorListSelectors } from "../../store/selectors";
+import store from "../../store";
 
 function Comment() {
   const { t } = useTranslation();
   const dispatch = useDispatch();
-  const [Index, setIndex] = useState();
+  const [Index, setIndex] = useState("1");
   // const arr = t("commentArray", { returnObjects: true });
 
-  const ArrFunc = useCallback((index) => {
-    return () => {
-      publicAPI
-        .get(`/?page=1&category=${index}`)
+  const ArrFunc = useCallback(
+    (index) => {
+      return () => {
+        dispatch(doctorsListActions.get(index));
+        setIndex(index);
+      };
+    },
+    [dispatch]
+  );
 
-        .then((res) => {
-          return dispatch(UserActions.setUser(res));
-        })
-        .then(() => {
-          setIndex(index);
-        });
-    };
-  }, []);
+  const list = useSelector(doctorListSelectors.doctorList);
+  console.log(store.getState());
+  console.log(list, "list");
 
-  const select = useSelector(UserActions.setUser).payload.user;
-
-  const list = useMemo(() => {
-    if (select == null) {
+  const listArr = useMemo(() => {
+    if (list == null) {
       return null;
     } else {
-      const user = select.data.results[0];
-
       return (
         <div className="comment">
           <div className="conteiner">
-            <HeaderCont date={user}></HeaderCont>
-            <BodyCont date={user}></BodyCont>
+            <HeaderCont date={list}></HeaderCont>
+            <BodyCont date={list}></BodyCont>
           </div>
         </div>
       );
     }
-  }, [select, Index]);
+  }, [Index]);
 
   return (
     <div className="bodyConteiner">
@@ -59,7 +56,7 @@ function Comment() {
           {t("glxavorEj.bodytableC")}
         </CreatButton>
       </div>
-      {Index ? list : null}
+      {Index ? listArr : null}
     </div>
   );
 }

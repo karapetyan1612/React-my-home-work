@@ -1,3 +1,3 @@
-import * as UserSelectors from "./userSelector";
-
-export { UserSelectors };
+import * as doctorListSelectors from "./doctorsListSelectors";
+import * as doctorProfileSelectors from "./doctorsProfileSelectors";
+export { doctorListSelectors, doctorProfileSelectors };
