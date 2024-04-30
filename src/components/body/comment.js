@@ -24,24 +24,22 @@ function Comment() {
     [dispatch]
   );
 
-  const list = useSelector(doctorListSelectors.doctorList);
-  console.log(store.getState());
-  console.log(list, "list");
+  const { list } = useSelector(doctorListSelectors.doctorList);
 
   const listArr = useMemo(() => {
     if (list == null) {
       return null;
     } else {
-      return (
-        <div className="comment">
+      return list.map((item) => (
+        <div className="comment" key={item.id}>
           <div className="conteiner">
-            <HeaderCont date={list}></HeaderCont>
-            <BodyCont date={list}></BodyCont>
+            <HeaderCont date={item}></HeaderCont>
+            <BodyCont date={item}></BodyCont>
           </div>
         </div>
-      );
+      ));
     }
-  }, [Index]);
+  }, [list]);
 
   return (
     <div className="bodyConteiner">

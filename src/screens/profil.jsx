@@ -15,14 +15,13 @@ function ProfilDoctor() {
   const { data, status, error } = useSelector(
     doctorProfileSelectors.doctorProfile
   );
-
+  console.log(data);
   const { t } = useTranslation();
 
   // const arr = t("commentArray", { returnObjects: true });
 
   useEffect(() => {
     window.scrollTo(0, 0);
-
     dispatch(doctorsProfileActions.get(id));
   }, [dispatch]);
 
@@ -33,11 +32,11 @@ function ProfilDoctor() {
       return (
         <div className="profildoctor">
           <ProfilHedaer arr={data}></ProfilHedaer>
-          {/* <ProfilBody arr={select}></ProfilBody> */}
+          {/* <ProfilBody arr={data}></ProfilBody> */}
         </div>
       );
     }
-  }, []);
+  }, [data]);
   return <>{list}</>;
 }
 export default ProfilDoctor;
